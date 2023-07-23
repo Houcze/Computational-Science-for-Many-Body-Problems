@@ -22,9 +22,6 @@ println(string(j, base=2),"  ",c1)
 j,c1= Hubbard1D.Aop(2,i,1.0)                    # annihilate an up-spin electron at 1st site
 string(j, base=2)
 
-"""
-    t, U, L, nelec 这几个变量分别代表模型的跃迁(tunneling)参数、Hubbard相互作用强度、晶格长度(lattice sites)以及电子的数量。
-"""
 t = 1.0 # be careful about the boundary condition
 U = 8.0
 L = 6
@@ -90,15 +87,7 @@ println("=======================================================================
 
 function lanczos(H, max_iter)
     n = size(H, 1)
-    """
-        V: 这是一个保存所有 Lanczos 向量的矩阵。每次迭代，算法都会计算一个新的 Lanczos 向量，并将其添加到此矩阵中。
-        这些向量被用于构造一个 Krylov 子空间，它是原始矩阵（在这个例子中是哈密顿矩阵）的近似空间。
-    """
     V = zeros(Float64, n, max_iter) 
-    """
-        T: 这是一个三对角矩阵，它是原始矩阵在 Krylov 子空间上的表示。换句话说, T 是 V' * A * V 的结果（其中 ' 表示矩阵转置），而 A 是我们要找到其特征值和特征向量的原始矩阵。
-        由于 Lanczos 向量的特性, T 是一个三对角矩阵，这使得我们可以用更有效的算法（如 QR 算法）来找到其特征值和特征向量。这些特征值和特征向量然后被用于构造原始矩阵 A 的近似特征值和特征向量。
-    """
     T = zeros(Float64, max_iter, max_iter)
 
     β = 0.0

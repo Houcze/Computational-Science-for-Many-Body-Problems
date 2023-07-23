@@ -12,7 +12,7 @@ Before you run anything, ensure that there are ten directories named 1, 2, 3, 4,
 
 - The file N51200_N102400.jl is required to produce Figure 5.
 
-For Problem 2, ensure that mkl.jl works before executing any code. 
+For Problem 2, ensure that mkl.jl works before executing any code.
 
 - The file sample_Hubbard_small_v0.jl implements LANCZOS and LOBCG and the part that directly solves the eigenvalues with LAPACK (via mkl.jl). This code also generates Figure 6.
 

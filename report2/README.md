@@ -18,6 +18,8 @@ For Problem 2, ensure that mkl.jl works before executing any code.
 
 - The file a1.jl is needed to generate Figure 7.
 
+For Problem 3,
+
 - To generate Figures 8 and 9, you need demo.def, create_def.py, a2.py, and a2.jl.
 
 This serves as a guide to successfully generate the required figures for the project. Please ensure that all dependencies are properly installed and working. Thank you for using this code repository!
